@@ -84,8 +84,7 @@ app.get("/", (request, response) => {
 app.get("/:id", (request, response) => {
     var instructorId = findById(instructors, request.params.id);
     if (!instructorId) {
-        response.status = 404
-        response.json({
+        response.status(404).json({
             error: {
                 message: "No record found!"
             }
